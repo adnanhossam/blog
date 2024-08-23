@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>New Post</h1>
+    <form action="" method="Post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type = "submit" value="save" />
+    </form>
+{% endblock content %}
+{% block content %}
+    <div class="post-entry">
+        <h2>{{ post.title }}</h2>
+        <p> {{ post.body }}</p>
+    </div>
+
+    <a href="{% url 'post_edit post.pk %}"> + Edit Blog Post </a>
+
+{% endblock content %}
+
+        
